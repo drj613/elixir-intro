@@ -1,19 +1,34 @@
-**NOTES**
+##NOTES##
 
 Variables are defined like Ruby. Simply declare a name and set a value. 
 
 An `atom` is a constant whose value is its own name. Some languages (e.g. Ruby) call these symbols. Atoms are equal if their names are equal. They are often used to express the state of an operation, by using values such as :ok or :error. The booleans `true` and `false` are atoms, and so is `nil`. These three atoms can all be called without the leading `:` that other atoms require.
 
+`.ex` filetype is for *compiled* files
+`.exs` filetype is for *interpreted* files (namely scripts/tests)
+
+---
+##Interactive Shell##
+
+Start with `iex`
+From within `iex`, you can load another elixir file with `Code.load_file(filename)`
+
 ---
 
-**STRINGS**
+##STRINGS##
 
-Strings in Elixir are delimited by double quotes. It also supports string interpolation like so
+Strings in Elixir are delimited by double quotes. It supports string interpolation like so
 ```
 string = :world
 "hello #{string}"
 => "hello world"
 ```
+
+You can declare a string without quotes like this:
+`~s{my text here}`
+
+Similarly, regex is declared like:
+`~r{my expression}`
 
 Output a string or get user input as a string with:
 `IO.puts("hi") => hi`
@@ -32,7 +47,7 @@ The String module contains a lot of the functions that operate on strings.
 
 ---
 
-**FUNCTIONS**
+##FUNCTIONS##
 
 Functions in Elxir are defined by both their name and their arity (how many arguments they take).
 `round/1` refers to a `round` function which takes `1` argument.
@@ -41,9 +56,11 @@ The Elixir shell defines the `h` function, which can be used to access documenta
 `h round/1` will output the documentation for the `round/1` function.
 `h` can be used to display documentation for any module and function that was compiled with docs.
 
-*Anonymous functions* allow us to store and pass executable code around in a variable. They are delimited by the keywords `fn` and `end`:
+**Anonymous functions** allow us to store and pass executable code around in a variable. They are delimited by the keywords `fn` and `end`:
 
 ```
+fn x -> x * 2 end
+
 add = fn a, b -> a + b end
 
 add.(1, 2) => 3
@@ -98,7 +115,10 @@ x
 
 ---
 
+`|>` is called the **pipe operator**
 
+`left |> right`
+The pipe operator passes the expression on the left hand side as the first argument into the function call on the right-hand side.
 
 ---
 
