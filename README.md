@@ -1,4 +1,6 @@
-##NOTES##
+alchemist.camp
+
+## NOTES ##
 
 Variables are defined like Ruby. Simply declare a name and set a value. 
 
