@@ -1,4 +1,4 @@
-alchemist.camp
+https://www.alchemist.camp
 
 ## NOTES ##
 
